@@ -89,10 +89,10 @@ myUrgentWSRight = "}"
 
 myWorkspaces =
   [
-    "7:PRD",  "8:STG", "9:TeamViewer",
-    "4:FILE",  "5:Dev", "6:VM",
+    "7:PRD",  "8:Keys", "9:TeamViewer",
+    "4:Files",  "5:Dev", "6:VM",
     "1:Web",  "2:DBG", "3:Mail",
-    "0:Vim",    "Extr1", "Extr2"
+    "0:Vim", "Extr1", "Extr2"
   ]
 
 startupWorkspace = "0:Vim"  -- which workspace do you want to be on after launch?
@@ -264,6 +264,9 @@ myManagementHooks = [
   , resource =? "stalonetray" --> doIgnore
   , className =? "rdesktop" --> doFloat
   , (className =? "Terminator") --> doF (W.shift "0:Vim")
+  , (className =? "teamviewer") --> doF (W.shift "9:TeamViewer")
+  , (className =? "Seahorse") --> doF (W.shift "8:Keys")
+  , (className =? "Nemo") --> doF (W.shift "4:Files")
   ]
 
 
