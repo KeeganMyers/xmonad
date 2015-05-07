@@ -89,9 +89,9 @@ myUrgentWSRight = "}"
 
 myWorkspaces =
   [
-    "7:PRD",  "8:STG", "9:DBG",
-    "4:FILE",  "5:Dev", "6:Web",
-    "1:Term",  "2:Hub", "3:Mail",
+    "7:PRD",  "8:STG", "9:TeamViewer",
+    "4:FILE",  "5:Dev", "6:VM",
+    "1:Web",  "2:DBG", "3:Mail",
     "0:Vim",    "Extr1", "Extr2"
   ]
 
@@ -205,6 +205,7 @@ myKeyBindings =
     ((myModMask, xK_b), sendMessage ToggleStruts)
     , ((myModMask, xK_a), sendMessage MirrorShrink)
     , ((myModMask, xK_z), sendMessage MirrorExpand)
+    , ((myModMask, xK_l), spawn "xautolock -locknow")
     , ((myModMask, xK_p), spawn "synapse")
     , ((myModMask .|. mod1Mask, xK_space), spawn "synapse")
     , ((myModMask, xK_u), focusUrgent)
@@ -262,6 +263,7 @@ myManagementHooks = [
   resource =? "synapse" --> doIgnore
   , resource =? "stalonetray" --> doIgnore
   , className =? "rdesktop" --> doFloat
+  , (className =? "Terminator") --> doF (W.shift "0:Vim")
   ]
 
 
