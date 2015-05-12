@@ -89,7 +89,7 @@ myUrgentWSRight = "}"
 
 myWorkspaces =
   [
-    "7:PRD",  "8:Keys", "9:TeamViewer",
+    "7:Chat",  "8:Keys", "9:TeamViewer",
     "4:Files",  "5:Dev", "6:VM",
     "1:Web",  "2:DBG", "3:Mail",
     "0:Vim", "Extr1", "Extr2"
@@ -264,7 +264,11 @@ myManagementHooks = [
   , resource =? "stalonetray" --> doIgnore
   , className =? "rdesktop" --> doFloat
   , (className =? "Terminator") --> doF (W.shift "0:Vim")
-  , (className =? "teamviewer") --> doF (W.shift "9:TeamViewer")
+  , (className =? "Teamviewer") --> doF (W.shift "9:TeamViewer")
+  , (className =? "Chromium-browser") --> doF (W.shift "3:Mail")
+  , (resource =? "Firebug") --> doF (W.shift "2:DBG")
+  , (resource =? "Pidgin") --> doF (W.shift "7:Chat")
+  , (className =? "Firefox") --> doF (W.shift "1:Web")
   , (className =? "Seahorse") --> doF (W.shift "8:Keys")
   , (className =? "Nemo") --> doF (W.shift "4:Files")
   ]
