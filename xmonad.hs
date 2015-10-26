@@ -264,11 +264,11 @@ myManagementHooks = [
   , resource =? "stalonetray" --> doIgnore
   , className =? "rdesktop" --> doFloat
   , (className =? "Terminator") --> doF (W.shift "0:Vim")
-  , (className =? "Teamviewer") --> doF (W.shift "9:TeamViewer")
-  , (className =? "Chromium-browser") --> doF (W.shift "3:Mail")
-  , (resource =? "Firebug") --> doF (W.shift "2:DBG")
+  , (className =? "TeamViewer") --> doF (W.shift "9:TeamViewer")
+  , (className =? "Wine") --> doF (W.shift "9:TeamViewer")
+  , (className =? "Chromium-browser" <&&> stringProperty "WM_WINDOW_ROLE" =? "browser") --> doF (W.shift "3:Mail")
+  , (className =? "Chromium-browser" <&&> stringProperty "WM_WINDOW_ROLE" =? "pop-up") --> doF (W.shift "1:Web")
   , (resource =? "Pidgin") --> doF (W.shift "7:Chat")
-  , (className =? "Firefox") --> doF (W.shift "1:Web")
   , (className =? "Seahorse") --> doF (W.shift "8:Keys")
   , (className =? "Nemo") --> doF (W.shift "4:Files")
   ]
